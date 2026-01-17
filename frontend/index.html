@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香港巴士實時追蹤 | Hong Kong Bus Real-time Tracker</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 香港巴士實時追蹤系統</h1>
+            <h2>Hong Kong Bus Real-time Tracker</h2>
+        </header>
+        
+        <div class="search-panel">
+            <div class="input-group">
+                <label for="start">起點 / Start:</label>
+                <input type="text" id="start" placeholder="例如: 銅鑼灣崇光百貨">
+            </div>
+            <div class="input-group">
+                <label for="end">終點 / End:</label>
+                <input type="text" id="end" placeholder="例如: 尖沙咀碼頭">
+            </div>
+            <button id="search-btn">搜索路線 / Search Route</button>
+            <div class="language-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">English</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div id="map"></div>
+            <div class="sidebar">
+                <div class="route-info">
+                    <h3>路線詳情 / Route Details</h3>
+                    <div id="route-details">請輸入起點和終點</div>
+                </div>
+                <div class="stops-list">
+                    <h3>巴士站點 / Bus Stops</h3>
+                    <div id="stops-container">未選擇路線</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script src="mapbox-setup.js"></script>
+</body>
+  </html>
